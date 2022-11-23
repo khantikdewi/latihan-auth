@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setIsLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [res, setRes] = useState("");
@@ -22,6 +22,7 @@ const Login = () => {
       .then((res) => {
         setRes(res.data.access_token);
         console.log(res.data.access_token);
+        setIsLogin(true);
         navigate("/dashboard");
         localStorage.setItem("Token", res.data.access_token);
       })
