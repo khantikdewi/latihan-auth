@@ -18,7 +18,8 @@ const Login = ({ setIsLogin }) => {
     // axios.post("https://bootcamp-rent-cars.herokuapp.com/customer/auth/register", payload).then().catch(err)
 
     axios
-      .post("https://bootcamp-rent-cars.herokuapp.com/customer/auth/login", payload)
+      // .post("https://bootcamp-rent-cars.herokuapp.com/customer/auth/login", payload)
+      .post("https://reqres.in/api/login", payload)
       .then((res) => {
         setRes(res.data.access_token);
         console.log(res.data.access_token);
